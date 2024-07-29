@@ -7,22 +7,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: url('https://media.giphy.com/media/1QcqLUCuQca1edQ0rK/giphy.gif') repeat;
             margin: 0;
             padding: 0;
         }
-        header {
+        header, footer {
             background-color: #4CAF50;
             color: white;
-            padding: 1em 0;
             text-align: center;
+            padding: 1em 0;
         }
         .container {
             width: 80%;
             margin: auto;
-            overflow: hidden;
         }
-        .content {
+        .content, .gallery {
             margin: 2em 0;
         }
         .gallery {
@@ -39,35 +38,52 @@
         }
         .gallery img {
             width: 100%;
-            height: auto;
             transition: transform 0.3s ease;
         }
         .gallery div:hover img {
             transform: scale(1.1);
         }
         .gallery h3 {
-            font-size: 1em;
-            color: #555;
+            color: black;
             position: absolute;
             bottom: 10px;
             left: 0;
             right: 0;
             opacity: 0;
             transform: translateY(10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: opacity 0.3s, transform 0.3s;
         }
         .gallery div:hover h3 {
             opacity: 1;
             transform: translateY(0);
         }
-        footer {
-            background-color: #333;
-            color: white;
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
             text-align: center;
-            padding: 1em 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .button:hover {background-color: #3e8e41}
+        .button:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+        .share-button {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: url('https://www.freepnglogos.com/uploads/share-png/share-svg-png-icon-download-21.png') no-repeat center center;
+            background-size: contain;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -83,20 +99,39 @@
             <p>Join us on our journey as we continue to develop exciting new games and push the limits of what's possible in Roblox game development. We are always looking for talented individuals to join our team and help us create the next big hit on Roblox.</p>
             <p>For more information about our projects and to stay updated on our latest releases, be sure to follow us on Roblox and visit our official website. We look forward to sharing our passion for game development with you!</p>
             <p>Don't forget to check out our Upback Innovation Awards website for more information on our annual awards event, where we celebrate the best and brightest in the Roblox developer community. Visit us at <a href="https://upbackinnovationawards.github.io">upbackinnovationawards.github.io</a>.</p>
+            <button class="button" onclick="window.location.href='https://upbackinnovationawards.github.io'">UpBack Innovation Awards</button>
+            <div class="share-button" onclick="navigator.share({title: 'Upback', text: 'Check out Upback - Roblox Game Development', url: 'https://upbackweb.github.io'})"></div>
         </section>
         <section class="gallery">
             <div>
-                <img src="https://tr.rbxcdn.com/2a38e88283b468bba3f05e22e2ddf9eb/150/150/Image/png" alt="Upback Group">
-                <h3>Roblox Group: Upback</h3>
+                <a href="https://www.roblox.com/groups/17293233/UpBack">
+                    <img src="https://tr.rbxcdn.com/2a38e88283b468bba3f05e22e2ddf9eb/150/150/Image/png" alt="Upback Group">
+                    <h3>Roblox Group: Upback</h3>
+                </a>
             </div>
             <div>
-                <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-6AA1EB912EB6CC9E600BDA53A63DCAB1-Png/150/150/AvatarHeadshot/png/noFilter" alt="Lead Developer">
-                <h3>@upbackdev</h3>
+                <a href="https://www.roblox.com/users/6188258836">
+                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-6AA1EB912EB6CC9E600BDA53A63DCAB1-Png/150/150/AvatarHeadshot/png/noFilter" alt="Lead Developer">
+                    <h3>@upbackdev</h3>
+                </a>
             </div>
         </section>
     </div>
     <footer>
         <p>© 2024 Upback. All rights reserved.</p>
     </footer>
+    <script>
+        document.querySelector('.share-button').addEventListener('click', () => {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Upback',
+                    text: 'Check out Upback - Roblox Game Development',
+                    url: 'https://upbackweb.github.io'
+                }).catch(console.error);
+            } else {
+                alert('Share not supported on this browser.');
+            }
+        });
+    </script>
 </body>
 </html>
