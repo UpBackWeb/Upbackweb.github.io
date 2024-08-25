@@ -3,138 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upback - Roblox Game Development</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header, footer {
-            background-color: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .content, .gallery {
-            margin: 2em 0;
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .gallery div {
-            flex: 1 1 48%;
-            margin: 0.5em;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .gallery img {
-            width: 100%;
-            transition: transform 0.3s ease;
-        }
-        .gallery div:hover img {
-            transform: scale(1.1);
-        }
-        .gallery h3 {
-            color: black;
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            right: 0;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        .gallery div:hover h3 {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
-        .button:hover {background-color: #3e8e41}
-        .button:active {
-            background-color: #3e8e41;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
-        .share-button {
-            display: inline-block;
-            width: 32px;
-            height: 32px;
-            background: url('https://www.freepnglogos.com/uploads/share-png/share-svg-png-icon-download-21.png') no-repeat center center;
-            background-size: contain;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script.js">
+    <title>UpBack</title>
 </head>
 <body>
-    <header>
-        <h1>Upback - Roblox Game Development</h1>
-    </header>
-    <div class="container">
-        <section class="content">
-            <p>Welcome to Upback, a leading Roblox game development group. We create innovative and engaging games for the Roblox community.</p>
-            <p>Our team is dedicated to pushing the boundaries of what's possible in game development. We focus on creating immersive experiences that captivate players and keep them coming back for more. Our games are designed with the player in mind, ensuring a fun and engaging experience every time.</p>
-            <p>At Upback, we believe in the power of creativity and innovation. Our developers are constantly exploring new ideas and techniques to bring the best possible games to the Roblox platform. We are committed to excellence and strive to deliver high-quality games that stand out in the crowded Roblox marketplace.</p>
-            <p>Join us on our journey as we continue to develop exciting new games and push the limits of what's possible in Roblox game development. We are always looking for talented individuals to join our team and help us create the next big hit on Roblox.</p>
-            <p>For more information about our projects and to stay updated on our latest releases, be sure to follow us on Roblox and visit our official website. We look forward to sharing our passion for game development with you!</p>
-            <p>Don't forget to check out our Upback Innovation Awards website for more information on our annual awards event, where we celebrate the best and brightest in the Roblox developer community. Visit us at <a href="https://upbackinnovationawards.github.io">upbackinnovationawards.github.io</a>.</p>
-            <button class="button" onclick="window.location.href='https://upbackinnovationawards.github.io'">UpBack Innovation Awards</button>
-            <div class="share-button" onclick="navigator.share({title: 'Upback', text: 'Check out Upback - Roblox Game Development', url: 'https://upbackweb.github.io'})"></div>
-        </section>
-        <section class="gallery">
-            <div>
-                <a href="https://www.roblox.com/groups/17293233/UpBack">
-                    <img src="https://tr.rbxcdn.com/2a38e88283b468bba3f05e22e2ddf9eb/150/150/Image/png" alt="Upback Group">
-                    <h3>Roblox Group: Upback</h3>
-                </a>
-            </div>
-            <div>
-                <a href="https://www.roblox.com/users/6188258836">
-                    <img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-6AA1EB912EB6CC9E600BDA53A63DCAB1-Png/150/150/AvatarHeadshot/png/noFilter" alt="Lead Developer">
-                    <h3>@upbackdev</h3>
-                </a>
-            </div>
-        </section>
-    </div>
-    <footer>
-        <p>© 2024 Upback. All rights reserved.</p>
-    </footer>
-    <script>
-        document.querySelector('.share-button').addEventListener('click', () => {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Upback',
-                    text: 'Check out Upback - Roblox Game Development',
-                    url: 'https://upbackweb.github.io'
-                }).catch(console.error);
-            } else {
-                alert('Share not supported on this browser.');
-            }
-        });
-    </script>
+    <div class="icon-bar">
+        <a class="active" href="#"><i class="fa fa-home"></i></a>
+        <a href="#"><i class="fa fa-gamepad"></i></a>
+        <a href="#"><i class="fa"></i></a>
+        <a href="#"><i class="fa"></i></a>
+        <a href="#"><i class="fa"></i></a>
+      </div>
+    <h1>UpBack</h1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <h2>Customer Support</h2>
+    
+<form action="https://api.web3forms.com/submit" method="POST">
+
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="70c778ca-bc01-4ced-b0b1-24a9d4a95696">
+
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+     <h2>Name</h2>
+    <input class="Foodbar" type="text" name="name" required>
+    <h2>Email</h2>
+    <input class="Foodbar" type="email" name="email" required>
+    <h2>What do you want to say?</h2>
+    <textarea class="Foodbar" name="message" required></textarea>
+
+    <!-- Honeypot Spam Protection -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+    <!-- Custom Confirmation / Success Page -->
+    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+<div>
+    <button class="formbutton" type="submit">Submit Form</button>
+    <section class="black-square">
+        <h1>Our Mission</h1>
+        <p>Our mission is to provide everyone with entertainment. Join our</p>
+        <a href="https://www.roblox.com/groups/17293233/UpBack">ROBLOX group</a>
+<p>for the latest info and for us to get verified!</p>
+    </div>    
+</section>
+
+</form>
 </body>
 </html>
